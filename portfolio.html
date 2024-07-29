@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="shortcut icon" href="../image/rose12.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Proxima+Nova&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+        color: #fff;
+        transition: 1s ease;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      body {
+        scroll-behavior: smooth;
+      }
+      .first-page {
+        background: url("../image/portfolio1.jpg");
+        height: 100vh;
+        background-size: contain;
+        background-attachment: fixed;
+        background-position: center;
+        position: relative;
+      }
+      .first-page nav {
+        position: fixed;
+        top: 0px;
+        z-index: 1;
+        right: 15%;
+        backdrop-filter: blur(10px);
+        padding: 1.5%;
+        transition: 1s ease;
+      }
+      .first-page nav ul {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .first-page nav ul li a {
+        color: rgb(56, 106, 150);
+        font-size: 25px;
+        text-decoration: none;
+        margin: 0 20px;
+      }
+      .first-page nav ul li a:hover {
+        color: aqua;
+      }
+      .m {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        position: absolute;
+        margin: 100px 30% 0 0;
+      }
+      .m .intro {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 35%;
+        padding: 50px 50px;
+        gap: 50px;
+        margin-top: 5%;
+        position: relative;
+        transition-duration: 1s;
+      }
+
+      .intro:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top: 2px solid white;
+        border-right: 2px solid white;
+        width: 20%;
+        height: 40%;
+        transition: 0.5s;
+      }
+      .intro:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 2px solid white;
+        border-left: 2px solid white;
+        width: 20%;
+        height: 40%;
+        transition: 0.5s;
+      }
+
+      .intro:hover:before {
+        width: 99.5%;
+        height: 99.5%;
+        border-top: 2px solid rgb(110, 194, 220);
+        border-right: 2px solid rgb(78, 172, 203);
+      }
+      .intro:hover:after {
+        width: 99.5%;
+        height: 99.5%;
+        border-bottom: 2px solid rgb(111, 181, 208);
+        border-left: 2px solid rgb(77, 172, 182);
+      }
+      .intro:hover img {
+        box-shadow: 0 0 10px rgb(102, 124, 124);
+        scale: 1.5;
+      }
+      .intro .image {
+        width: 250px;
+        height: 250px;
+        border-radius: 150px;
+        overflow: hidden;
+        transition: 1s ease;
+      }
+      .intro .image img {
+        width: 100%;
+        height: auto;
+        transition: 1s ease;
+      }
+      .intro strong {
+        color: #fff;
+        font-size: 40px;
+      }
+      .intro span::after {
+        content: "Full-Stack Web Developer";
+        display: block;
+        color: aqua;
+        font-size: 20px;
+        text-align: center;
+      }
+      .career-goals {
+        width: 25%;
+      }
+      .career-goals > h2 {
+        margin-top: 20%;
+        font-size: 30px;
+      }
+      .career-goals > h2::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 170px;
+        background-color: aqua;
+        margin: 0 0 30px 0;
+      }
+      .career-goals p::after {
+        content: "-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  --  -  -  -  -  -  -  -  -  -  -  -  -  -  ";
+        color: aqua;
+        display: block;
+        align-items: center;
+      }
+      p {
+        color: rgb(119, 157, 196);
+      }
+      .career-goals table td a {
+        text-decoration: none;
+      }
+      .career-goals table td a:hover {
+        color: aqua;
+      }
+      th,
+      td {
+        padding: 10px 20px 0 0;
+        text-align: left;
+      }
+      .cv-download-btn {
+        position: absolute;
+        right: 10%;
+        bottom: 10%;
+        animation: shake 4s linear alternate infinite;
+        animation-delay: 1s;
+      }
+      @keyframes shake {
+        0% {
+          transform: translateY(0) rotate(0);
+        }
+
+        50% {
+          transform: translateY(-15px) rotate(0);
+        }
+        89% {
+          transform: translateY(-15px) rotate(0deg);
+        }
+        90% {
+          transform: translateY(-15px) rotate(-5deg);
+        }
+        92% {
+          transform: translateY(-15px) rotate(5deg);
+        }
+        94% {
+          transform: translateY(-15px) rotate(-5deg);
+        }
+        96% {
+          transform: translateY(-15px) rotate(5deg);
+        }
+        98% {
+          transform: translateY(-15px) rotate(-5deg);
+        }
+        100% {
+          transform: translateY(-15px) rotate(5deg);
+        }
+      }
+      .cv-download-btn a {
+        text-decoration: none;
+        color: coral;
+        border-radius: 100px;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: 800;
+        background-color: aqua;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      .cv-download-btn a:hover {
+        background-color: rgba(0, 255, 255, 0.427);
+        box-shadow: 0 0 100px blue;
+      }
+      .second-page {
+        height: 100vh;
+        padding: 0 14%;
+      }
+      .second-page header {
+        color: aqua;
+        font-size: 40px;
+        padding: 70px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .second-page .content-2 .about1 {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 50% 50%;
+      }
+      .second-page .content-2 .about1 img {
+        width: 100%;
+        height: 300px;
+      }
+      .second-page .content-2 .about1 .projects {
+        border: 1px solid aqua;
+        padding: 20px;
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .second-page .content-2 .about1 .projects h4 {
+        color: grey;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .second-page .content-2 .about1 .projects h4:nth-child(-n + 3) {
+        font-size: 30px;
+        color: rgb(217, 131, 228);
+      }
+      .third-page {
+        padding: 0 14%;
+        background: linear-gradient(
+          rgba(35, 138, 216, 0.53) 50%,
+          rgba(0, 0, 0, 0.366)
+        );
+        padding-bottom: 5%;
+      }
+      .third-page header,
+      .forth-page header,
+      .fifth-page header {
+        color: aqua;
+        font-size: 40px;
+        padding: 70px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .third-page .exp-content,
+      .forth-page .edu-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .third-page .exp-content .exp-content-1,
+      .forth-page .edu-content .edu-content-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        padding: 50px 10px;
+      }
+      .third-page .exp-content .exp-content-1 .year,
+      .forth-page .edu-content .edu-content-1 .year {
+        padding-left: 15%;
+      }
+      .third-page .exp-content .exp-content-1 h4,
+      .forth-page .edu-content .edu-content-1 h4 {
+        color: rgb(123, 63, 200);
+      }
+      .third-page .exp-content .exp-content-1:hover,
+      .forth-page .edu-content .edu-content-1:hover {
+        transform: translate(0, -5%);
+        box-shadow: 0 0 10px aqua;
+      }
+      .third-page .exp-content .exp-content-1:hover h3,
+      .forth-page .edu-content .edu-content-1:hover h3 {
+        color: aqua;
+      }
+      .forth-page {
+        padding: 0 14% 5% 14%;
+        background: linear-gradient(
+          rgba(35, 138, 216, 0.53) 50%,
+          rgba(0, 0, 0, 0.322)
+        );
+
+        /* height: 80vh; */
+      }
+      .fifth-page .project-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 0 14% 5% 14%;
+        /* gap: 20px; */
+      }
+      .fifth-page .project-container .project {
+        height: 300px;
+        width: 300px;
+        position: relative;
+        margin-top: 10px;
+        /* background-color: bisque; */
+        overflow: hidden;
+      }
+      .fifth-page .project-container .project-img {
+        width: 100%;
+        height: 100%;
+}
+      .fifth-page .project-container img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        border: 1px solid;
+        border-image: fill 0 linear-gradient(#0003,#000);
+        }
+      .fifth-page .project-container .project button {
+        position: absolute;
+        top: -15%;
+        left: 50%;
+        /* display: none; */
+        padding: 10px 20px;
+        background-color: rgb(235, 99, 99);
+        border-radius: 1px;
+        border: none;
+        /* color: aqua; */
+        font-size: 20px;
+        transform: translate(-50%, -50%);
+      }
+      .fifth-page .project-container .project:hover button {
+        /* display: block; */
+        animation: viewbutton 1s linear;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        animation-iteration-count: 1;
+      }
+      .fifth-page .project-container .project button.animate-in {
+        display: block;
+        animation: viewbutton 0.3s linear forwards;
+        animation-delay: 1s;
+      }
+      .fifth-page .project-container .project button.animate-out {
+        display: block;
+        animation-delay: 1s;
+      animation: hidebutton 0.3s linear forwards;
+}
+      @keyframes viewbutton {
+        from {
+          transform: translate(-50%, -50%);
+        }
+        to {
+          transform: translate(-50%, 150px);
+        }
+      }
+     
+
+@keyframes hidebutton {
+    from {
+        transform: translate(-50%, 150px);
+    }
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+      footer {
+        background: linear-gradient(lightgrey, lightsteelblue);
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+        align-items: center;
+      }
+      footer .footer-1 {
+        display: flex;
+        gap: 40px;
+        width: 100%;
+        justify-content: space-evenly;
+      }
+      footer .footer-1 .f1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        justify-content: space-around;
+        padding: 50px;
+      }
+      footer .footer-1 .f1 i {
+        font-size: 40px;
+        background-color: aqua;
+        padding: 10px;
+        border-radius: 50%;
+      }
+      footer .footer-1 .f1:hover i {
+        background-color: rgb(255, 255, 255);
+        color: aqua;
+      }
+      footer .footer-1 .f1 h3 {
+        font-size: 25px;
+        letter-spacing: 3px;
+      }
+      footer .footer-1 .f1 a {
+        text-decoration: none;
+        color: rgb(119, 157, 196);
+      }
+      footer .footer-1 .f1:hover a {
+        text-decoration: underline;
+      }
+      footer .footer-2 {
+        font-size: 15px;
+        margin-top: 20px;
+        padding: 40px;
+      }
+    </style>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="first-page" id="home">
+      <nav id="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#myproject">My Project</a></li>
+        </ul>
+      </nav>
+      <div class="m">
+        <div class="intro">
+          <div class="image">
+            <img src="./media/me.jpg" alt="profile" />
+          </div>
+          <span><strong>Bipin Mathya Duwal</strong></span>
+        </div>
+        <div class="career-goals">
+          <h2>Career Goal</h2>
+          <p>
+            &quot; Passionate Full Stack Developer dedicated to crafting
+            innovative, user-centric web applications that seamlessly integrate
+            front-end elegance with back-end robustness. &quot;
+          </p>
+          <table>
+            <tr>
+              <th>D.O.B</th>
+              <td>: 2002-04-23</td>
+            </tr>
+            <tr>
+              <th>Phone</th>
+              <td>: +977 989895865</td>
+            </tr>
+            <tr>
+              <th>Address</th>
+              <td>
+                :
+                <a
+                  href="https://www.google.com/maps/place/Bhaktapur+Durbar+Square/@27.6752052,85.4223704,15.16z/data=!4m15!1m8!3m7!1s0x39eb1aae42806ba1:0x5449e079404e5e82!2sBhaktapur!3b1!8m2!3d27.6710221!4d85.4298197!16zL20vMDJqazhk!3m5!1s0x39eb1aafec32df31:0xdda339e731af9bfd!8m2!3d27.67207!4d85.4282951!16s%2Fm%2F0h1g9sk?entry=ttu"
+                  target="_blank"
+                  >Bhaktapur, Nepal</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <th>E-mail</th>
+              <td>
+                :
+                <a href="mailto:duwalbipin123@gmail.com" target="_blank"
+                  >duwalbipin987@gmail.com</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <th>Website</th>
+              <td>
+                :
+                <a href="http://www.bipinduwal.com.np" target="_blank"
+                  >www.bipinduwal.com.np</a
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="cv-download-btn">
+        <a href="./cv.pdf" download>Download C V</a>
+      </div>
+    </div>
+    <div class="second-page" id="about">
+      <header>About Me</header>
+      <div class="content-2">
+        <div class="about1">
+          <div class="about-image">
+            <img src="./media/cat.png" alt="profile" />
+          </div>
+          <div class="about-description">
+            <p>
+              Hi! I'm Bipin Mathya Duwal, a dedicated Full Stack Developer with
+              a passion for building intuitive and robust web applications. I
+              enjoy working across the tech stack, from crafting seamless
+              front-end experiences to engineering reliable back-end solutions.
+              With a love for continuous learning, I stay current with the
+              latest technologies and best practices. When I'm not coding, I
+              enjoy exploring new tech trends and contributing to open-source
+              projects. Let's create something amazing together!
+            </p>
+            <div class="projects">
+              <h4>50</h4>
+              <h4>50</h4>
+              <h4>1</h4>
+              <h4>web projects</h4>
+              <h4>java projects</h4>
+              <h4>summer project</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="third-page">
+      <header>Experience</header>
+      <div class="exp-content">
+        <div class="exp-content-1">
+          <div class="year">
+            <h3>2081 B.S.</h3>
+          </div>
+          <div class="details">
+            <h3>Educational</h3>
+            <h4>college Project</h4>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="forth-page">
+      <header>Education</header>
+      <div class="edu-content">
+        <div class="edu-content-1">
+          <div class="year">
+            <h3>2074 B.S.</h3>
+          </div>
+          <div class="details">
+            <h3>School Level</h3>
+            <h4>S.E.E</h4>
+            <p>From Bagiswori Secondary School, securing SGPA = 3.50</p>
+          </div>
+        </div>
+        <div class="edu-content-1">
+          <div class="year">
+            <h3>2076/77 B.S.</h3>
+          </div>
+          <div class="details">
+            <h3>+2 Level</h3>
+            <h4>+2 in Science</h4>
+            <p>
+              From Bagiswori Secondary School, securing SGPA = 3.31
+              <br />
+              Major subject : Math
+            </p>
+          </div>
+        </div>
+        <div class="edu-content-1">
+          <div class="year">
+            <h3>2078 B.S.</h3>
+          </div>
+          <div class="details">
+            <h3>Bachelor Level</h3>
+            <h4>Bachelor of Information Management(BIM)</h4>
+            <p>Currently studying in Bhaktapur Multiple Campus</p>
+          </div>
+        </div>
+        <div class="edu-content-1">
+          <div class="year">
+            <h3>2081 B.S.</h3>
+          </div>
+          <div class="details">
+            <h3>Web Development</h3>
+            <h4>Full Stack Development in MERN</h4>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fifth-page" id="myproject">
+      <header>My project</header>
+      <div class="project-container">
+        <div class="project">
+          <div class="project-img">
+            <img src="./media/p1.jpg" alt="project1" />
+          </div>
+          <button>View Details</button>
+        </div>
+        <div class="project">
+          <div class="project-img">
+            <img src="./media/p2.jpg" alt="project1" />
+          </div>
+          <button>View Details</button>
+        </div>
+        <div class="project">
+          <div class="project-img">
+            <img src="./media/p3.jpg" alt="project1" />
+          </div>
+          <button>View Details</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-1">
+        <div class="f1">
+          <span><i class="bx bx-current-location"></i></span>
+          <h3>Location</h3>
+          <p>Bhaktapur, Nepal</p>
+        </div>
+        <div class="f1">
+          <span><i class="bx bx-envelope"></i></span>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:duwalbipin123@gmail.com">duwalbipin123@gmail.com</a>
+          </p>
+        </div>
+        <div class="f1">
+          <span><i class="bx bxs-phone-call"></i></span>
+          <h3>Contact</h3>
+          <p><a href="tel:+977-9869131867">+977 9869131867</a></p>
+        </div>
+      </div>
+      <div class="footer-2">
+        <p>© 2017 Resume. All Rights Reserved | Design by @bipinduwal</p>
+      </div>
+    </footer>
+    <script>
+      let lastScrollTop = 0;
+      const navbar = document.getElementById("navbar");
+
+      window.addEventListener("scroll", function () {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+          // Scrolling down
+          navbar.style.top = "-90px"; // Adjust based on nav height
+        } else {
+          // Scrolling up
+          navbar.style.top = "0";
+        }
+        lastScrollTop = scrollTop;
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+    const projects = document.querySelectorAll('.fifth-page .project-container .project');
+
+    projects.forEach(project => {
+        const button = project.querySelector('button');
+        
+        project.addEventListener('mouseenter', () => {
+            button.classList.remove('animate-out');
+            button.classList.add('animate-in');
+        });
+
+        project.addEventListener('mouseleave', () => {
+            button.classList.remove('animate-in');
+            button.classList.add('animate-out');
+        });
+    });
+});
+
+    </script>
+  </body>
+</html>
